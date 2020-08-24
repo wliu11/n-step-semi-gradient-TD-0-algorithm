@@ -1,6 +1,7 @@
 import numpy as np
 from policy import Policy
 
+
 class ValueFunctionWithApproximation(object):
     def __call__(self,s) -> float:
         """
@@ -27,6 +28,9 @@ class ValueFunctionWithApproximation(object):
         """
         raise NotImplementedError()
 
+"""
+An implementation of the semi-gradient n-step TD algorithm as described in page 209 of Sutton & Barto
+"""
 def semi_gradient_n_step_td(
     env, #open-ai environment
     gamma:float,
@@ -37,8 +41,6 @@ def semi_gradient_n_step_td(
     num_episode:int,
 ):
     """
-    implement n-step semi gradient TD for estimating v
-
     input:
         env: target environment
         gamma: discounting factor
